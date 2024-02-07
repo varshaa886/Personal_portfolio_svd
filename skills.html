@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            background: linear-gradient(0deg, rgba(8, 8, 8, 0.3), rgba(14, 14, 14, 0.3)), url("skill.jpg");
+            background-color: rgb(7, 7, 7);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: rgb(250, 248, 248);
+            font-family: 'DM Serif Display', serif;
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            background-color: rgb(12, 12, 12);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+
+        }
+
+        nav ul li {
+            margin: 0 30px;
+        }
+
+        nav ul li a {
+            text-transform: none;
+            color: rgb(34, 103, 171);
+            text-decoration: none;
+
+        }
+
+        nav ul li a:hover {
+            color: rgb(12, 69, 107);
+        }
+
+        .leftheader {
+            font-size: 1.5rem;
+            color: white;
+            margin-left: 10px;
+        }
+
+        .menu-btn {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-btn div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: rgb(12, 12, 12);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .menu-btn {
+                display: flex;
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+
+            justify-content: space-around;
+            margin: 20px 0;
+
+        }
+
+        .section {
+            flex-basis: 45%;
+
+            margin: 10px;
+
+            padding: 20px;
+
+            background-color: rgba(255, 255, 255, 0.3);
+
+            border-radius: 10px;
+
+            color: blueviolet;
+            text-align: center;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+
+        }
+
+        .socialicons {
+            display: flex;
+            justify-content: right;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+            animation: floatIcons 3s ease-in-out infinite;
+        }
+
+        @keyframes floatIcons {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .socialicons a {
+            text-decoration: none;
+            padding: 10px;
+            margin: 10px;
+            background-color: rgb(249, 244, 244);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: right;
+            transition: background-color 0.5s;
+        }
+
+        .socialicons a i {
+            font-size: 2rem;
+            opacity: 0.9;
+            color: black;
+        }
+
+        .socialicons a:hover {
+            background-color: #575252;
+        }
+
+
+
+        .leftsectionhead,
+        .lefthead2,
+        .prohead,
+        .experience,
+        .highlights,
+        .footerhead {
+            color: blueviolet;
+            font-family: 'DM Serif Display', serif;
+            text-align: center;
+        }
+
+        .techset,
+        .proset,
+        .experiencedescript,
+        .highlightsdescript,
+        .footerdes {
+            color: white;
+            font-family: 'DM Serif Display', serif;
+            text-align: left;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        .lefthead2,
+        .prohead,
+        .experience,
+        .highlights,
+        .footerhead {
+            font-size: 1.5rem;
+            margin-top: 30px;
+        }
+
+        .lefthead2 {
+            text-align: center;
+        }
+
+        .techset,
+        .proset {
+            padding-left: 20px;
+            padding-top: 20px;
+            list-style-type: circle;
+        }
+
+        .experiencedescript,
+        .highlightsdescript {
+            text-align: left;
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        .footerhead {
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+            text-align: left;
+        }
+
+        .footerdes {
+            margin-left: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="leftheader"> Personal Portfolio of Sri Varsha Dodda</div>
+        <div class="menu-btn" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="project.html">Home</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="skills.html">Skills</a></li>
+        </ul>
+    </nav>
+    <hr>
+
+    <div class="container">
+        <section class="section">
+            <h2 style="color: pink;font-size: 3rem;margin-bottom: 20px;">What Have I learnt ?</h2>
+            <h3 style="color: pink;font-size: 1.5rem;">Technical Skills</h3>
+            <ul class="techset">
+                <li>Languages: JavaScript (ES6+), HTML5, CSS3, C++</li>
+                <li>Machine Learning: Basics in Linear Regression and Classification</li>
+                <li>Version Control: Git, GitHub</li>
+                <li>Responsive Design: Bootstrap, CSS</li>
+            </ul>
+            <h3 style="color: pink;margin-top: 20px; font-size: 1.5rem;">Projects I Have Built</h3>
+            <ul class="proset">
+                <li>Personal Portfolio</li>
+                <li>WebsiteBlog Website</li>
+                <li>E-Commerce StoreTo-Do List App</li>
+                <li>Social Networking Website</li>
+                <li>Job Board Platform</li>
+                <li>Online Learning Platform</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 style="color: pink;font-size: 1.5rem;">Skills I Would Like to Acquire</h2>
+            <ul class="experiencedescript">
+                <li>Basic Back-End Language(e.g:Node.js,Python): Understanding server-side development to create
+                    dynamic web app.</li>
+                <li>Databases(e.g:MySQL, MongoDB): Gaining knowledge of both relational and NoSQL databases for data
+                    storage and retrieval.</li>
+                <li>APIs and RESTful Services: Learning how to integrate and consume data from external sources.</li>
+                <li>Basic DevOps Tools(e.g:Docker,CI/CD): Familiarizing with deployment processes and continuous
+                    integration.</li>
+            </ul>
+            <h2 style="color: pink;">Projects I Would Consider Doing in Future</h2>
+            <ul class="highlightsdescript">
+                <li>To-Do List App with React: Building a simple task management app to practice front-end
+                    development.</li>
+                <li>Blog Platform with Node.js and Express: Developing a basic blogging platform to delve into
+                    server-side development and database interactions.</li>
+                <li>Weather App with API Integration: Integrating with a weather API to display real-time weather
+                    information, providing hands-on experience with API consumption.</li>
+                <li>Social Media Dashboard: Building a dashboard that aggregates data from different social media APIs,
+                    showcasing proficiency in API integration.</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footerhead">Get In Touch</div>
+        <div class="footerdes">Let's connect and turn ideas into reality! Feel free to reach out – I'm excited to
+            collaborate and create something <br>extraordinary together. Drop me a message, and let the magic begin!
+        </div>
+        <ul class="socialicons">
+            <li><a href="https://www.instagram.com/_ahsrav._?igsh=Z2lxYWdhamRmNmIx" target="_blank"><i
+                        class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/sri-v-4b709a210?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="mailto:srivarshadodda@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li>
+            <li><a href="tel:+9676094039" target="_blank"><i class="fas fa-phone"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.querySelector('nav ul');
+            navMenu.classList.toggle('show');
+        }
+    </script>
+
+
+
+</body>
+
+</html>

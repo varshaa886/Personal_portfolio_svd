@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Personal Portfolio</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #3498db, #8e44ad);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                backdrop-filter: blur(0px);
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                backdrop-filter: blur(80px);
+                transform: translateY(0);
+            }
+        }
+
+        .socialicons {
+            display: flex;
+            justify-content: right;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 50px;
+        }
+
+        @keyframes floatIcons {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .socialicons a {
+            text-decoration: none;
+            padding: 10px;
+            margin: 10px;
+            background-color: rgb(249, 244, 244);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: right;
+            transition: background-color 0.5s;
+            animation: floatIcons 3s infinite;
+        }
+
+        .socialicons a i {
+            font-size: 2rem;
+            opacity: 0.9;
+            color: black;
+        }
+
+        .socialicons a:hover {
+            background-color: #575252;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(1, 6, 10);
+            background: url(" https://png.pngtree.com/thumb_back/fh260/background/20230617/pngtree-digital-design-of-a-laptop-and-desk-lamp-image_3636013.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: rgb(38, 40, 47);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 10px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            background-color: rgb(12, 12, 12);
+        }
+
+        nav ul {
+            font-family: 'DM Serif Display', serif;
+            font-weight: lighter;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 30px;
+        }
+
+        nav ul li a {
+            text-transform: none;
+            color: rgb(34, 103, 171);
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            color: rgb(12, 69, 107);
+        }
+
+        .leftheader {
+            font-family: 'DM Serif Display', serif;
+            font-weight: lighter;
+            color: white;
+            font-size: 1.5rem;
+            margin-left: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .sectionone {
+            display: flex;
+            justify-content: space-around;
+            margin: 23px 0;
+        }
+
+        .leftsectionone {
+            font-family: 'DM Serif Display', serif;
+            color: white;
+            width: 50%;
+            font-size: 3.5rem;
+            padding-top: 50px;
+            padding-left: 50px;
+        }
+
+        .description {
+            font-family: 'DM Serif Display', serif;
+            font-size: 0.9rem;
+            margin-top: 30px;
+            line-height: 1.5;
+        }
+
+        .hello {
+            font-family: 'DM Serif Display', serif;
+            font-size: 4.8rem;
+        }
+
+        .des {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.8rem;
+        }
+
+        .rightsectionone {
+            width: 30%;
+            display: flex;
+            align-items: center;
+        }
+
+        .rightsectionone img {
+            width: 430px;
+            height: 470px;
+            margin-left: 0px;
+            border-radius: 10px;
+            border-color: black;
+            border-width: 40px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .name {
+            color: blueviolet;
+        }
+
+        #element {
+            color: blueviolet;
+        }
+
+        .l1 {
+            border-color: rgb(40, 41, 40);
+        }
+
+        .menu-icon {
+            display: none;
+        }
+
+        @media only screen and (max-width: 600px) {
+            main {
+                padding: 10px;
+            }
+
+            .leftsectionone {
+                font-size: 1rem;
+            }
+
+            .hello {
+                font-size: 3rem;
+            }
+
+            .sectionone {
+                flex-direction: column-reverse;
+            }
+
+            .rightsectionone {
+                display: flex;
+                justify-content: center;
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: rgb(12, 12, 12);
+            }
+
+            nav ul li {
+                margin: 10px;
+                text-align: center;
+            }
+
+            .menu-icon {
+                display: block;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+
+            .rightheader {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .menu-bars {
+                display: block;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: rgb(12, 12, 12);
+            }
+
+            nav ul li {
+                margin: 10px;
+                text-align: center;
+            }
+        }
+
+        @media only screen and (min-width: 600px) {
+            .menu-bars {
+                display: none;
+            }
+
+            nav ul {
+                display: flex !important;
+
+            }
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            height: 180px;
+        }
+
+        .footerhead {
+            font-family: 'DM Serif Display', serif;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            text-align: left;
+            font-size: 1.8rem;
+            color: rgb(34, 103, 171);
+            margin-left: 10px;
+        }
+
+        .footerdes {
+            margin-left: 10px;
+            text-align: left;
+            color: rgb(139, 143, 147);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="leftheader">Personal Portfolio of Sri Varsha Dodda</div>
+            <div class="rightheader">
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <div class="menu-bars">&#9776;</div>
+                </div>
+                <ul>
+                    <li><a href="project.html">Home</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                </ul>
+            </div>
+        </nav>
+        <hr class="l1">
+    </header>
+    <main>
+        <section class="sectionone">
+            <div class="leftsectionone">
+                <div class="hello">Hello there!</div>
+                <div class="des">I'm<span class="name"> Sri Varsha D</span>
+                    <div> I am a</div>
+
+                    <span id="element"></span>
+                </div>
+                <p class="description"> I'm a passionate web developer dedicated to crafting seamless and engaging
+                    digital experiences. With a keen eye for design and a knack for coding, I bring ideas to life on the
+                    web. I love the challenge of finding elegant solutions to complex problems, constantly exploring
+                    new technologies to stay ahead in the dynamic world of web development. Explore my portfolio and
+                    discover the art of turning concepts into captivating online realities. Let's build something
+                    amazing
+                    together soon!!</p>
+            </div>
+            <div class="rightsectionone">
+                <img src="mypic.jpg" />
+            </div>
+        </section>
+    </main>
+
+
+    <hr>
+    <footer>
+        <div class="footerhead draw">Get In Touch</div>
+        <div class="footerdes draw">Let's connect and turn ideas into reality! Feel free to reach out – I'm excited to
+            collaborate and create something <br>extraordinary together. Drop me a message, and let the magic begin!
+        </div>
+        <div class="footercontainer">
+            <ul class="socialicons">
+                <li><a href="https://www.instagram.com/_ahsrav._?igsh=Z2lxYWdhamRmNmIx" target="_blank"><i
+                            class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/sri-v-4b709a210?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="mailto:srivarshadodda@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                </li>
+                <li><a href="tel:+9676094039" target="_blank"><i class="fas fa-phone"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'App Developer', 'Video Editor.'],
+            typeSpeed: 70,
+        });
+
+        function toggleMenu() {
+            var navUl = document.querySelector('nav ul');
+            if (navUl.style.display === 'flex') {
+                navUl.style.display = 'none';
+            } else {
+                navUl.style.display = 'flex';
+            }
+        }
+
+        window.addEventListener('resize', function () {
+            var screenWidth = window.innerWidth;
+            if (screenWidth > 600) {
+                document.querySelector('nav ul').style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+
+</html>

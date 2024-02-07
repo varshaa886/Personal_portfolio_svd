@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Education</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            background: linear-gradient(0deg, rgba(17, 30, 46, 0.3), rgba(10, 26, 47, 0.3)), url("edu2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: rgb(255, 255, 255);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            background-color: rgb(12, 12, 12);
+        }
+
+        nav ul {
+            font-family: 'DM Serif Display', serif;
+            font-weight: lighter;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 30px;
+        }
+
+        nav ul li a {
+            text-transform: none;
+            color: rgb(34, 103, 171);
+        }
+
+        nav ul li a:hover {
+            color: rgb(12, 69, 107);
+        }
+
+        .leftheader {
+            font-family: 'DM Serif Display', serif;
+            font-weight: lighter;
+            color: white;
+            font-size: 1.5rem;
+            margin-left: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            font-family: 'DM Serif Display', serif;
+            border: 1px solid #090909;
+            padding: 8px;
+            text-align: center;
+            margin-left: 30px;
+        }
+
+        th {
+            background-color: #433838;
+        }
+
+        .edudes {
+            font-family: 'DM Serif Display', serif;
+            line-height: 1.5;
+            margin-top: 30px;
+            margin-left: 30px;
+            margin-right: 30px;
+            font-size: 1.01rem;
+            color: #ddd;
+        }
+
+        .section1 {
+            display: flex;
+            justify-content: space-around;
+            margin: 23px 0;
+            height: auto;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .languages,
+        .recognition,
+        .achievements {
+            margin-top: 30px;
+            margin-left: 30px;
+            flex-basis: calc(33.33% - 60px);
+        }
+
+        .lhead,
+        .recoghead,
+        .achhead {
+            font-size: 2rem;
+            font-family: 'DM Serif Display', serif;
+            color: #8a2be2;
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        .tabletitle {
+            margin-top: 20px;
+            font-size: 1.8rem;
+            font-family: 'DM Serif Display', serif;
+            margin-left: 30px;
+            color: #8a2be2;
+            font-weight: bold;
+        }
+
+        .socialicons {
+            display: flex;
+            justify-content: right;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 50px;
+            animation: floatIcons 3s ease-in-out infinite;
+        }
+
+        .achlist,
+        .recoglist,
+        .languagelist {
+            list-style-type: circle;
+            margin-top: 10px;
+        }
+
+        .hamburger-menu {
+            display: none;
+            color: white;
+            font-size: 1.8rem;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        @keyframes floatIcons {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .socialicons a {
+            text-decoration: none;
+            padding: 10px;
+            margin: 10px;
+            background-color: rgb(249, 244, 244);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.5s;
+        }
+
+        .socialicons a i {
+            font-size: 2rem;
+            opacity: 0.9;
+            color: black;
+        }
+
+        .socialicons a:hover {
+            background-color: #575252;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            height: 180px;
+            clear: both;
+        }
+
+        .footerhead {
+            font-family: 'DM Serif Display', serif;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            text-align: left;
+            font-size: 1.8rem;
+            color: rgb(34, 103, 171);
+            margin-left: 10px;
+        }
+
+        .footerdes {
+            margin-left: 10px;
+            text-align: left;
+            color: rgb(139, 143, 147);
+        }
+
+        .menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .section1 {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .languages,
+            .recognition,
+            .achievements {
+                width: calc(100% - 60px);
+                margin-left: 30px;
+                margin-right: 30px;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: rgb(12, 12, 12);
+            }
+
+            nav ul li {
+                text-align: center;
+                margin: 0;
+                padding: 15px 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="leftheader"> Personal Portfolio of Sri Varsha Dodda</div>
+        <div class="rightheader">
+            <ul class="nav-menu">
+                <li><a href="project.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+            </ul>
+            <div class="menu hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+        </div>
+    </nav>
+
+    <hr>
+    <div class="edudes">
+        <span style="color:pink; font-size: 1.8rem; font-family: 'Cursive', serif; font-weight: bold;">Embark</span>
+        on
+        a
+        voyage through my educational journey, a
+        narrative shaped by curiosity
+        and
+        fueled by
+        a passion for
+        continuous learning. From the formative days of high school to the immersive experiences of undergraduate and
+        postgraduate studies, each step has been a building block in my pursuit of knowledge. Internships and real-world
+        engagements
+        have not only expanded my skill set but have also added practical dimensions to my academic foundation. As I
+        eagerly embrace future opportunities,
+        this journey is a testament to my commitment to growth, adaptability, and a lifelong dedication to education.
+        Join me as I navigate the exciting
+        terrain of learning, where every lesson contributes to the ever-evolving story of my educational adventure.
+    </div>
+    <div class="tabletitle" style="color: blueviolet;">My Academic Journey so far</div>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Type</th>
+                <th>Institution and Place</th>
+                <th>Score</th>
+                <th>Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Schooling</td>
+                <td>Sanghamitra School, Hyderabad</td>
+                <td>9.6</td>
+                <td>2010-2021</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>High School</td>
+                <td>Sri Chaitanya College, Hyderabad</td>
+                <td>9.8 </td>
+                <td>2022 and 2023</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Bachelor Of Technology</td>
+                <td>Indian Institute Of Technology Indore</td>
+                <td> - </td>
+                <td>2023-2027</td>
+            </tr>
+        </tbody>
+    </table>
+    <main>
+        <section>
+            <div class="section1">
+                <div class="languages">
+                    <div class="lhead" style="color: blueviolet;">Languages I know</div>
+                    <ul class="languagelist">
+                        <li>English</li>
+                        <li>Hindi</li>
+                        <li>Telugu</li>
+                        <li>Sanskrit</li>
+                    </ul>
+                </div>
+                <div class="recognition">
+                    <div class="recoghead" style="color:blueviolet;">Recognition</div>
+                    <ul class="recoglist">
+                        <li>WOW - Dry waste collection by ITC</li>
+                        <li>Abacus - District level competition</li>
+                        <li>Volleyball - District level Silver</li>
+                        <li>Throwball - District level Gold</li>
+                        <li>Inter School Essay Writing</li>
+                        <li>Shot-put School level</li>
+                        <li>International Model UN-Voice Commendation and Special Mention</li>
+                    </ul>
+                </div>
+                <div class="achievements">
+                    <div class="achhead" style="color:blueviolet;">My Achievements</div>
+                    <ul class="achlist">
+                        <li>Academic Excellence: Consistent high grades or recognition for outstanding academic
+                            performance</li>
+                        <li>Participation in Science or Math Olympiads: Involvement and success in regional or national
+                            competitions</li>
+                        <li>Leadership Roles: Holding positions such as class monitor, student council member, or team
+                            captain</li>
+                        <li>Sports Achievements: Participation and success in school sports events or competitions</li>
+                        <li>Science Fair Projects: Participation and awards for innovative science projects</li>
+                        <li>Debate or Public Speaking: Awards or recognition for participation in debates or public
+                            speaking events</li>
+                        <li>School Clubs: Leadership or active involvement in clubs such as science club, language club,
+                            etc</li>
+                        <li>Community Service: Volunteering and recognition for community service activities</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <hr>
+    <footer>
+        <div class="footerhead">Get In Touch</div>
+        <div class="footerdes">Let's connect and turn ideas into reality! Feel free to
+            reach out – I'm excited to collaborate and create something <br>extraordinary together. Drop me a
+            message,
+            and let the magic begin!</div>
+        <div class="footercontainer">
+            <ul class="socialicons">
+                <li><a href="https://www.instagram.com/_ahsrav._?igsh=Z2lxYWdhamRmNmIx" target="_blank"><i
+                            class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/sri-v-4b709a210?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="mailto:srivarshadodda@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li>
+                <li><a href="tel:+9676094039" target="_blank"><i class="fas fa-phone"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('show');
+        }
+    </script>
+    <script>
+        const socialIcons = document.querySelector('.socialicons');
+
+        function floatIcons() {
+            socialIcons.style.animation = 'floatIcons 3s ease-in-out infinite';
+        }
+
+        floatIcons();
+    </script>
+</body>
+
+</html>
